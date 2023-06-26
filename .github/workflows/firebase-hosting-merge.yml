@@ -11,12 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm i && npm run build
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dpendencies
+        run: npm ci
+      - name: build aplicationl
+        run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEST_WEBPACK_18DE4 }}'
           channelId: live
           projectId: test-webpack-18de4
-        env:
-          API: '${{ secrets.API }}'
