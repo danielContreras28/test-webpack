@@ -19,7 +19,7 @@ jobs:
       - name: config env
         run: echo 'test env $API'
         env:
-          API: ${{env.API}}
+          API: https://randomuser.me/api/
       - name: build aplicationl
         run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
