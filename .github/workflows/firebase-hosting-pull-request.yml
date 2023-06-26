@@ -18,10 +18,6 @@ jobs:
           node-version: 18
       - name: install dpendencies
         run: npm ci
-      - name: config env
-        run: echo 'test env $API'
-        env:
-          API: ${{env.API}}
       - name: build aplicationl
         run: npm run build
         env:

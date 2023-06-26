@@ -16,10 +16,10 @@ jobs:
           node-version: 18
       - name: install dpendencies
         run: npm ci
-      - name: Set Environment Variables
-        uses: tw3lveparsecs/github-actions-set-variables@latest
-        with:
-          envFilePath: ./drop/.github/variables/vars.env
+      - name: config env
+        run: echo 'test env $API'
+        env:
+          API: ${{env.API}}
       - name: build aplicationl
         run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
