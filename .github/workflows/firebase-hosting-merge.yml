@@ -16,10 +16,10 @@ jobs:
           node-version: 18
       - name: install dpendencies
         run: npm ci
-      - name: config env
-        run: echo 'test env $API'
-        env:
-          API: ${{secrets.API}}
+      - name: config-env
+        data:
+          .env: |
+            API: '${{secrets.API}}'
       - name: build aplicationl
         run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
