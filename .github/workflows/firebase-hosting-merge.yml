@@ -23,7 +23,7 @@ jobs:
       - name: config env
         run: echo "test env $API"
       - name: build aplicationl
-        run: npm run build
+        run:  set API=$API && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
