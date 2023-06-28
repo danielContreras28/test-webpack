@@ -1,7 +1,6 @@
 import { env } from '@env'
 
 const { API } = env
-
 const getData = async (id) => {
   console.log('api-->', process.env, API);
   const apiURl = id ? `${API}${id}` : API;
