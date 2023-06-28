@@ -1,4 +1,6 @@
-const { API } = process.env;
+import { env } from '@env';
+
+const { API } = env;
 
 const getData = async (id) => {
   console.log('api-->', API);
