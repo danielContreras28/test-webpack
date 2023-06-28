@@ -20,11 +20,10 @@ jobs:
           node-version: 18
       - name: config env
         run: echo "test env $API"
-      - uses: 1arp/create-a-file-action@0.2
-        with:
-          file: '.env'
-          content: |
-              API: "${{env.API}}"
+      - uses: finnp/create-file-action@master
+        env:
+          FILE_NAME: '.env'
+          FILE_DATA: 'API: "${{env.API}}"'
       - name: install dpendencies
         run: npm ci
       - name: build aplicationl
