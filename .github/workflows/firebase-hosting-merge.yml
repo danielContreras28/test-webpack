@@ -8,7 +8,7 @@ name: Deploy to Firebase Hosting on merge
       - main
 
 env:
-  API: ${{env.API}}
+  API: ${{vars.API}}
 
 jobs:
   build_and_deploy:
@@ -27,7 +27,7 @@ jobs:
           file: 'enviroment.js'
           content: |
             export const env = {
-              "API": $API
+              "API": ${{env.API}}
             }
       - name: build aplicationl
         run:  npm run build
