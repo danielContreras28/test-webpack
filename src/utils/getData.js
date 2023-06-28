@@ -1,7 +1,7 @@
 const { API } = process.env;
 
 const getData = async (id) => {
-  console.log('api-->', API);
+  console.log('api-->', process.env, API);
   const apiURl = id ? `${API}${id}` : API;
   try {
     const response = await fetch(apiURl);
