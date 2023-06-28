@@ -23,12 +23,12 @@ jobs:
       - name: config env
         run: echo "test env $API"
       - uses: finnp/create-file-action@master
-        env:
-          FILE_NAME: 'enviroment.js'
-          FILE_DATA: |
-            export const env = {
-              "API": $API
-            }
+          env:
+            FILE_NAME: 'enviroment.js'
+            FILE_DATA: |
+              export const env = {
+                "API": $API
+              }
       - name: build aplicationl
         run:  npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
